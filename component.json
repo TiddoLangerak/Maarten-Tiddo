@@ -1,0 +1,7 @@
+{
+	"name":"Maarten-Tiddo",
+	"version":"0.4.20",
+	"dependencies":{
+		"bootstrap":"2.3.x"
+	}
+}
