@@ -6,5 +6,9 @@
 	},
 	"dependencies": {
 		"log": "git+https://github.com/TiddoLangerak/node-log.git"
+	},
+	"devDependencies" : {
+		"grunt": "~0.4.1",
+		"grunt-contrib-jshint": "~0.1.1"
 	}
 }
