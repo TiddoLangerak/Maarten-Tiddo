@@ -2,7 +2,7 @@
 	"name"        : "Maarten-Tiddo",
 	"version"     : "0.1.0",
 	"scripts" : {
-		"start" : "cd src; NODE_PATH='../'; node app.js"
+		"start" : "cd serverRoot/src; NODE_PATH='../../'; node app.js"
 	},
 	"dependencies": {
 		"log": "git+https://github.com/TiddoLangerak/node-log.git"
