@@ -6,8 +6,11 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		shell : {
-			install : {
+			serverInstall : {
 				command : "npm install"
+			},
+			clientInstall:{
+				command : "bower install"
 			}
 		},
 		jshint : {
@@ -26,5 +29,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask("default", ["shell:install", "jshint:server", "jshint:client"]);
+	grunt.registerTask("default", ["shell", "jshint"]);
 };
