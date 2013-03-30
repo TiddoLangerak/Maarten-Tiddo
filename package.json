@@ -1,14 +1,15 @@
 {
-	"name"        : "Maarten-Tiddo",
-	"version"     : "0.1.0",
-	"scripts" : {
-		"start" : "cd serverRoot/src; NODE_PATH='../../'; node app.js"
-	},
-	"dependencies": {
-		"log": "git+https://github.com/TiddoLangerak/node-log.git"
-	},
-	"devDependencies" : {
-		"grunt": "~0.4.1",
-		"grunt-contrib-jshint": "~0.1.1"
-	}
+  "name": "Maarten-Tiddo",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "cd serverRoot/src; NODE_PATH='../../'; node app.js"
+  },
+  "dependencies": {
+    "log": "git+https://github.com/TiddoLangerak/node-log.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-shell": "~0.2.1"
+  }
 }
