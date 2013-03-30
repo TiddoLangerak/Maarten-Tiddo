@@ -2,6 +2,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-shell');
+	grunt.loadNpmTasks('grunt-contrib-less');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -26,8 +27,23 @@ module.exports = function(grunt) {
 					jshintrc: "clientRoot/js/src/.jshintrc"
 				}
 			}
-		}
+		},
+		less : {
+			development : {
+				files : {
+					"clientRoot/css/style.css" : "clientRoot/less/style.less"
+				}
+			},
+			production : {
+				options : {
+					yuicompress : true
+				},
+				files : {
+					"clientRoot/css/style.min.css" : "clientRoot/less/style.less"
+				}
+			}
+		} 
 	});
 
-	grunt.registerTask("default", ["shell", "jshint"]);
+	grunt.registerTask("default", ["shell", "jshint", "less"]);
 };
