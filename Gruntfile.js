@@ -5,6 +5,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-simple-mocha');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -28,6 +29,14 @@ module.exports = function(grunt) {
 				options : {
 					jshintrc: "clientRoot/js/src/.jshintrc"
 				}
+			}
+		},
+		simplemocha : {
+			options : {
+				ui : 'bdd'
+			},
+			all : {
+				src : 'serverRoot/test/**/*.js'
 			}
 		},
 		karma : {
@@ -60,5 +69,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask("default", ["shell", "jshint", "karma", "uglify", "less"]);
+	grunt.registerTask("default", ["shell", "jshint", "simplemocha", "karma", "uglify", "less"]);
+	grunt.registerTask("noInstall" , ["jshint", "simplemocha", "karma", "uglify", "less"]);
 };
