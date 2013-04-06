@@ -3,6 +3,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-karma');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	// Project configuration.
 	grunt.initConfig({
@@ -28,6 +30,19 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		karma : {
+			unit : {
+				configFile : "karma.conf.js",
+				browsers : ["Chrome"]
+			}
+		},
+		uglify : {
+			all : {
+				files: {
+					"clientRoot/js/min/all.min.js" : ["clientRoot/js/src/**/*.js"]
+				}
+			}
+		},
 		less : {
 			development : {
 				files : {
@@ -42,8 +57,8 @@ module.exports = function(grunt) {
 					"clientRoot/css/style.min.css" : "clientRoot/less/style.less"
 				}
 			}
-		} 
+		}
 	});
 
-	grunt.registerTask("default", ["shell", "jshint", "less"]);
+	grunt.registerTask("default", ["shell", "jshint", "karma","less"]);
 };
