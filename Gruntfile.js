@@ -60,5 +60,5 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask("default", ["shell", "jshint", "karma","less"]);
+	grunt.registerTask("default", ["shell", "jshint", "karma", "uglify", "less"]);
 };
